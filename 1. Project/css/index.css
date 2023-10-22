@@ -1,3 +1,16 @@
 body{
     background-color: gray;
+    margin: 0;
+    overflow: hidden;
+}
+
+header{
+    padding: 1px;
+    background-color: transparent;
+    margin: 0;
+    text-align: center;
+}
+nav{
+    background-color: gray;
+    padding: 10px;
 }

@@ -1,0 +1,9 @@
+/*#canvas{
+    border: 1px solid pink;
+}*/
+
+body{
+    background-color: black;
+    margin: 0;
+    overflow: hidden;
+}

@@ -1,0 +1,12 @@
+/*#canvas{
+    /*border: 1px solid pink;
+}*/
+
+body{
+    background-color: gray;
+    margin: 0;
+    overflow: hidden;
+}
+html{
+    margin: 0;
+}

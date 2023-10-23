@@ -9,8 +9,21 @@ header{
     background-color: transparent;
     margin: 0;
     text-align: center;
+    color: white;
 }
 nav{
-    background-color: gray;
     padding: 10px;
+}
+a:hover{
+    color: black;
+}
+canvas{
+    background-color: #032859;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:-1;
+}
+#container{
+    
 }

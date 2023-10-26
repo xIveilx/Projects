@@ -26,38 +26,24 @@ var colorArray = [
     '#AAECFC'
 ];
 
-
-function isMobile() {
-    const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-    return regex.test(navigator.userAgent);
-}
-
 window.addEventListener('mousemove', function(event) {
-    if (!isMobile()) {
         mouse.x = event.x;
         mouse.y = event.y;
-    }
 });
 
 window.addEventListener('touchmove', function(event) {
-    if (isMobile()) {
         touch.x = event.touches[0].clientX;
         touch.y = event.touches[0].clientY;
-    }
 });
 
 window.addEventListener('mouseout', function(event) {
-    if (!isMobile()) {
         mouse.x = undefined;
         mouse.y = undefined;
-    }
 });
 
 window.addEventListener('touchend', function(event) {
-    if (isMobile()) {
         touch.x = undefined;
         touch.y = undefined;
-    }
 });
 
 window.addEventListener('resize', function(){

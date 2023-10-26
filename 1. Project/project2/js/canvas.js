@@ -9,6 +9,12 @@ var mouse = {
     x: undefined,
     y: undefined
 }
+
+var touch = {
+    x: undefined,
+    y: undefined
+}
+
 var maxRadius = 60;
 //var minRadius = 3;
 
@@ -20,10 +26,39 @@ var colorArray = [
     '#AAECFC'
 ];
 
-window.addEventListener('mousemove', function(event){
-    mouse.x = event.x;
-    mouse.y = event.y;
-})
+
+function isMobile() {
+    const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+    return regex.test(navigator.userAgent);
+}
+
+window.addEventListener('mousemove', function(event) {
+    if (!isMobile()) {
+        mouse.x = event.x;
+        mouse.y = event.y;
+    }
+});
+
+window.addEventListener('touchmove', function(event) {
+    if (isMobile()) {
+        touch.x = event.touches[0].clientX;
+        touch.y = event.touches[0].clientY;
+    }
+});
+
+window.addEventListener('mouseout', function(event) {
+    if (!isMobile()) {
+        mouse.x = undefined;
+        mouse.y = undefined;
+    }
+});
+
+window.addEventListener('touchend', function(event) {
+    if (isMobile()) {
+        touch.x = undefined;
+        touch.y = undefined;
+    }
+});
 
 window.addEventListener('resize', function(){
     canvas.width = window.innerWidth;
@@ -62,7 +97,9 @@ function Circle(x, y, dx, dy, r){
 
         //interaktivitás
         if(mouse.x - this.x < 50 && mouse.x - this.x > -50 
-        && mouse.y - this.y < 50 && mouse.y - this.y > -50){
+        && mouse.y - this.y < 50 && mouse.y - this.y > -50
+        || touch.x - this.x < 50 && touch.x - this.x > -50 
+        && touch.y - this.y < 50 && touch.y - this.y > -50){
             if(this.r < maxRadius){
             this.r += 3;
             }

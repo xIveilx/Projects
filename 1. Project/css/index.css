@@ -18,7 +18,7 @@ a:hover{
     color: black;
 }
 canvas{
-    background-color: #032859;
+    background-image: radial-gradient(#032859, black);
     position:absolute;
     left:0;
     top:0;

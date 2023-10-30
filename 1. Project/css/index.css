@@ -14,8 +14,14 @@ header{
 nav{
     padding: 10px;
 }
+a{
+    color: white;
+    text-decoration: solid;
+}
 a:hover{
-    color: black;
+    color: white;
+    text-decoration: solid;
+    font-weight: bold;
 }
 canvas{
     background-image: radial-gradient(#032859, black);
@@ -23,7 +29,4 @@ canvas{
     left:0;
     top:0;
     z-index:-1;
-}
-#container{
-    
 }

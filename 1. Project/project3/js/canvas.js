@@ -164,12 +164,12 @@ function Particle(x, y, r, color){
     this.draw = () => {
         c.beginPath();
         c.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
+        c.strokeStyle = color;
+        c.fillStyle = color;
         c.save();
         c.globalAlpha = this.opacity;
-        c.fillStyle = color;
         c.fill();
         c.restore();
-        c.strokeStyle = color;
         c.stroke();
         c.closePath();
     }
